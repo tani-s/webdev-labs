@@ -1,0 +1,19 @@
+<section>
+    <h2>{{ restaurant.get('name') }}</h2>
+    <img src="{{ restaurant.get('image_url') }}" />
+    <p>{{ restaurant.get('display_address') }}</p>
+    <table>
+        <tr>
+            <td>Price</td>
+            <th>{{ restaurant.get('price') }}</th>
+        </tr>
+        <tr>
+            <td>Rating</td>
+            <th>{{ restaurant.get('rating') }}</th>
+        </tr>
+        <tr>
+            <td># Reviews</td>
+            <th>{{ restaurant.get('review_count') }}</th>
+        </tr>
+    </table>
+</section>

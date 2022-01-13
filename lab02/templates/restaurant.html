@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8"><title>Top Restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Restaurant</title>
+    <style>
+		section {
+			border: 1px solid #cecece;
+			width: calc(25vw - 20px);
+			padding: 0px;
+			padding-bottom: 20px;
+			display: inline-block;
+			margin-bottom: 20px;
+		}
+
+		section p, h2 {
+            padding-left: 20px;
+		}
+
+			section img {
+				box-sizing: border-box;
+				width: 100%;
+				height: 40vh;
+				object-fit: cover;
+			}
+
+		table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+
+		td, th {
+			border-bottom: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+
+		td {
+		    padding-left: 20px;
+        }
+
+		th {
+		    margin-left: 0;
+        }
+
+		main {
+			margin: 0px;
+			margin-left: 10px;
+			display: flex;
+		}
+
+		@media only screen and (max-width: 1000px) {
+			/* Media queries go here */
+
+			main {
+				flex-wrap: wrap;
+			}
+
+			section {
+				width: calc(50vw - 20px);
+			}
+		}
+
+		}
+
+		@media only screen and (max-width: 600px) {
+			/* Media queries go here */
+			
+
+			section {
+				width: calc(100vw - 20px);
+			}
+		}
+
+    </style>
+</head>
+<body>
+	{% include 'includes/header.html' %}
+
+	<p>Search location: {{city}}</p>
+	<p>Search term: {{search_term or 'None Specified'}}</p>
+	<main>
+		<div>
+			{% for restaurant in all_restaurants %}
+			{% include 'includes/single-restaurant.html' %}
+			{% endfor %}
+		</div>
+		<!--<p>Data: {{ restaurant }}</p>-->
+	</main>
+</body>
+</html>
+
